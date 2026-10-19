@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consulta el clima actual y el pronóstico de distintas ciudades en tiempo real con Open-Meteo.">
+    <title>Proyecto Clima</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="cabecera">
+        <h1 class="cabecera__titulo">Proyecto Clima</h1>
+        <p class="cabecera__subtitulo">Consulta el clima actual y el pronóstico de tu ciudad</p>
+    </header>
+
+    <main class="contenedor">
+        <form id="formulario-busqueda" class="buscador" novalidate>
+            <label for="entrada-ciudad" class="buscador__etiqueta">Ciudad</label>
+            <div class="buscador__controles">
+                <input
+                    type="text"
+                    id="entrada-ciudad"
+                    name="ciudad"
+                    class="buscador__entrada"
+                    placeholder="Escribe una ciudad..."
+                    autocomplete="off"
+                    aria-label="Nombre de la ciudad a buscar"
+                >
+                <button type="submit" id="boton-buscar" class="buscador__boton">
+                    Buscar
+                </button>
+            </div>
+        </form>
+
+        <div id="contenedor-estados" class="estados" aria-live="polite">
+
+            <section id="estado-carga" class="estado estado--carga" hidden>
+                <div class="spinner" aria-hidden="true"></div>
+                <p class="estado__texto">Buscando el clima...</p>
+            </section>
+
+            <section id="estado-exito" class="estado estado--exito" hidden>
+                <article class="clima-actual">
+                    <h2 id="nombre-ciudad" class="clima-actual__ciudad"></h2>
+                    <p id="fecha-actual" class="clima-actual__fecha"></p>
+                    <p id="icono-actual" class="clima-actual__icono" aria-hidden="true"></p>
+                    <p id="temperatura-actual" class="clima-actual__temperatura"></p>
+                    <p id="descripcion-actual" class="clima-actual__descripcion"></p>
+                    <p id="viento-actual" class="clima-actual__viento"></p>
+                </article>
+
+                <h3 class="pronostico__titulo">Próximos días</h3>
+                <div id="pronostico" class="pronostico"></div>
+            </section>
+
+            <section id="estado-error" class="estado estado--error" hidden>
+                <p id="icono-error" class="estado__icono" aria-hidden="true">⚠️</p>
+                <p id="mensaje-error" class="estado__texto"></p>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="pie">
+        <p class="pie__texto">Datos proporcionados por <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a></p>
+    </footer>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
