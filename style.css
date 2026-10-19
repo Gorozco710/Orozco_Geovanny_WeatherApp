@@ -320,6 +320,10 @@ body {
     color: var(--color-texto);
 }
 
+.tarjeta-dia__temp-max {
+    color: var(--color-texto);
+}
+
 .tarjeta-dia__temp-min {
     color: var(--color-texto-suave);
     font-weight: 500;
