@@ -46,7 +46,16 @@
                     <p id="icono-actual" class="clima-actual__icono" aria-hidden="true"></p>
                     <p id="temperatura-actual" class="clima-actual__temperatura"></p>
                     <p id="descripcion-actual" class="clima-actual__descripcion"></p>
-                    <p id="viento-actual" class="clima-actual__viento"></p>
+                    <ul class="clima-actual__detalles">
+                        <li class="clima-actual__detalle">
+                            <span class="clima-actual__detalle-icono" aria-hidden="true">💨</span>
+                            <span id="viento-actual" class="clima-actual__detalle-texto"></span>
+                        </li>
+                        <li class="clima-actual__detalle">
+                            <span class="clima-actual__detalle-icono" aria-hidden="true">💧</span>
+                            <span id="humedad-actual" class="clima-actual__detalle-texto"></span>
+                        </li>
+                    </ul>
                 </article>
 
                 <h3 class="pronostico__titulo">Próximos días</h3>
